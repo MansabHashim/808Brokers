@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonosphere - The Future of Music Ownership</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <style>
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
+        .from-slate-900 {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen from-slate-900">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-12">
+                    <h1 class="text-2xl font-bold text-white">Sonosphere</h1>
+                    <div class="hidden md:flex gap-8">
+                        <button class="text-white hover:text-purple-400 px-4 py-2">Explore</button>
+                        <button class="text-white hover:text-purple-400 px-4 py-2">Market</button>
+                        <button class="text-white hover:text-purple-400 px-4 py-2">Artists</button>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg flex items-center">
+                        <i data-feather="wallet" class="mr-2"></i>
+                        Connect Wallet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                The Future of <span class="text-purple-400">Music Ownership</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Experience the revolution in digital music. Own, trade, and earn from the tracks you love through blockchain technology.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-3 rounded-lg flex items-center justify-center">
+                    Start Exploring
+                    <i data-feather="chevron-right" class="ml-2"></i>
+                </button>
+                <button class="border border-white text-white text-lg px-8 py-3 rounded-lg">
+                    Launch Creator Studio
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="p-6 rounded-lg bg-white/5 backdrop-blur-lg">
+                    <div class="text-3xl font-bold text-purple-400 mb-2">2M+</div>
+                    <div class="text-gray-300">Active Users</div>
+                </div>
+                <div class="p-6 rounded-lg bg-white/5 backdrop-blur-lg">
+                    <div class="text-3xl font-bold text-purple-400 mb-2">500K+</div>
+                    <div class="text-gray-300">NFT Tracks</div>
+                </div>
+                <div class="p-6 rounded-lg bg-white/5 backdrop-blur-lg">
+                    <div class="text-3xl font-bold text-purple-400 mb-2">$50M+</div>
+                    <div class="text-gray-300">Trading Volume</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="py-16 px-6 bg-slate-800/50">
+        <div class="container mx-auto">
+            <div class="relative max-w-3xl mx-auto">
+                <i data-feather="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input 
+                    class="w-full pl-12 h-14 bg-white/10 border border-white/20 text-white placeholder:text-gray-400 text-lg rounded-lg"
+                    placeholder="Search for artists, tracks, or collections..."
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between mb-12">
+                <div class="flex items-center gap-3">
+                    <i data-feather="trending-up" class="text-purple-400"></i>
+                    <h3 class="text-2xl font-bold text-white">Trending Tracks</h3>
+                </div>
+                <button class="text-purple-400 hover:text-purple-300 flex items-center">
+                    View All <i data-feather="chevron-right" class="ml-1"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Track Card 1 -->
+                <div class="bg-slate-800/50 border border-slate-700 hover:border-purple-500 transition-all duration-300 rounded-lg p-6">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-feather="music" class="text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-white text-lg mb-1">Quantum Harmonics</h4>
+                            <p class="text-gray-400">0xArtist1</p>
+                            <p class="text-sm text-purple-400">Electronic</p>
+                        </div>
+                        <button class="hover:bg-purple-500/20 p-2 rounded-lg">
+                            <i data-feather="play" class="text-white"></i>
+                        </button>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <div class="flex items-center gap-4">
+                            <div class="flex items-center text-gray-400">
+                                <i data-feather="clock" class="mr-1"></i>
+                                125K
+                            </div>
+                            <div class="flex items-center text-gray-400">
+                                <i data-feather="heart" class="mr-1"></i>
+                                32K
+                            </div>
+                        </div>
+                        <div class="text-purple-400 font-medium">0.25 ETH</div>
+                    </div>
+                </div>
+
+                <!-- Track Card 2 -->
+                <div class="bg-slate-800/50 border border-slate-700 hover:border-purple-500 transition-all duration-300 rounded-lg p-6">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-feather="music" class="text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-white text-lg mb-1">Digital Symphony</h4>
+                            <p class="text-gray-400">0xArtist2</p>
+                            <p class="text-sm text-purple-400">Classical</p>
+                        </div>
+                        <button class="hover:bg-purple-500/20 p-2 rounded-lg">
+                            <i data-feather="play" class="text-white"></i>
+                        </button>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <div class="flex items-center gap-4">
+                            <div class="flex items-center text-gray-400">
+                                <i data-feather="clock" class="mr-1"></i>
+                                98K
+                            </div>
+                            <div class="flex items-center text-gray-400">
+                                <i data-feather="heart" class="mr-1"></i>
+                                28K
+                            </div>
+                        </div>
+                        <div class="text-purple-400 font-medium">0.18 ETH</div>
+                    </div>
+                </div>
+
+                <!-- Track Card 3 -->
+                <div class="bg-slate-800/50 border border-slate-700 hover:border-purple-500 transition-all duration-300 rounded-lg p-6">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-feather="music" class="text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-white text-lg mb-1">Neural Frequencies</h4>
+                            <p class="text-gray-400">0xArtist3</p>
+                            <p class="text-sm text-purple-400">Ambient</p>
+                        </div>
+                        <button class="hover:bg-purple-500/20 p-2 rounded-lg">
+                            <i data-feather="play" class="text-white"></i>
+                        </button>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <div class="flex items-center gap-4">
+                            <div class="flex items-center text-gray-400">
+                                <i data-feather="clock" class="mr-1"></i>
+                                76K
+                            </div>
+                            <div class="flex items-center text-gray-400">
+                                <i data-feather="heart" class="mr-1"></i>
+                                19K
+                            </div>
+                        </div>
+                        <div class="text-purple-400 font-medium">0.15 ETH</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 px-6 bg-slate-800/30">
+        <div class="container mx-auto">
+            <h3 class="text-3xl font-bold text-white text-center mb-16">Why Choose Sonosphere</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="shield" class="text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Secure Ownership</h4>
+                    <p class="text-gray-300">Blockchain-verified ownership of your music assets with immutable proof of authenticity.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="globe" class="text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Global Marketplace</h4>
+                    <p class="text-gray-300">Trade music NFTs in a borderless marketplace with instant settlements.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="users" class="text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-4">Artist Community</h4>
+                    <p class="text-gray-300">Connect directly with artists and fellow collectors in our thriving ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
