@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>808 Brokers - Digital Audio Marketplace</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            950: '#0a0a0a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gray-950 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gray-900/50 backdrop-blur-lg border-b border-gray-800/50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="music" class="h-6 w-6 text-blue-400"></i>
+                    <span class="text-xl text-white font-light tracking-wider">808<span class="font-medium">BROKERS</span></span>
+                </div>
+                <button class="bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 px-4 py-2 rounded-lg flex items-center space-x-2 text-sm font-light tracking-wider backdrop-blur-sm transition-all">
+                    <i data-lucide="wallet" class="h-5 w-5"></i>
+                    <span>Connect Wallet</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative">
+        <!-- Background Video/GIF -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <img src="/api/placeholder/1920/1080" alt="Background Animation" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/95 via-gray-900/80 to-gray-950/90 backdrop-blur-sm"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative container mx-auto px-6 py-24">
+            <div class="max-w-3xl mx-auto text-center space-y-8">
+                <h1 class="text-6xl font-extralight text-white tracking-tight leading-tight">
+                    Discover Your <span class="font-medium">Next Track</span>
+                </h1>
+                <p class="text-xl text-gray-400 font-light tracking-wide">
+                    Search through millions of samples, beats, and music production tools
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="relative max-w-2xl mx-auto">
+                    <input 
+                        type="text"
+                        placeholder="Search for samples, beats, or instruments..."
+                        class="w-full px-6 py-4 text-lg bg-gray-800/50 text-white border border-gray-700/50 rounded-lg focus:outline-none focus:border-blue-500/50 shadow-xl placeholder-gray-500 font-light backdrop-blur-sm"
+                    >
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500/20 text-blue-300 p-3 rounded-lg hover:bg-blue-500/30 transition-all backdrop-blur-sm">
+                        <i data-lucide="search" class="h-5 w-5"></i>
+                    </button>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 font-light">
+                    <span class="text-gray-500">Popular:</span>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Drum Kits</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Synth Presets</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Vocal Samples</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">MIDI Patterns</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mx-auto px-6 py-20">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-nowrap justify-center items-center gap-8">
+                <div class="w-80 bg-gray-900/50 rounded-xl p-6 shadow-xl border border-gray-800/50 hover:border-blue-500/30 transition-all backdrop-blur-sm">
+                    <div class="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 mb-4">
+                        <i data-lucide="mic-2" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2 text-white">Record</h3>
+                    <p class="text-gray-400 font-light">Professional-grade recording with noise cancellation</p>
+                </div>
+                <div class="w-80 bg-gray-900/50 rounded-xl p-6 shadow-xl border border-gray-800/50 hover:border-blue-500/30 transition-all backdrop-blur-sm">
+                    <div class="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 mb-4">
+                        <i data-lucide="waves" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2 text-white">Mix</h3>
+                    <p class="text-gray-400 font-light">Industry-standard mixing tools and effects</p>
+                </div>
+                <div class="w-80 bg-gray-900/50 rounded-xl p-6 shadow-xl border border-gray-800/50 hover:border-blue-500/30 transition-all backdrop-blur-sm">
+                    <div class="h-12 w-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 mb-4">
+                        <i data-lucide="share-2" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2 text-white">Export</h3>
+                    <p class="text-gray-400 font-light">Export in multiple formats with cloud backup</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 text-gray-400 py-12 border-t border-gray-800/50 backdrop-blur-lg">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="music" class="h-6 w-6 text-blue-400"></i>
+                    <span class="font-light text-white tracking-wider">808<span class="font-medium">BROKERS</span></span>
+                </div>
+                <div class="flex space-x-8 font-light text-sm">
+                    <a href="#" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Features</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Pricing</a>
+                    <a href="#" class="hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
