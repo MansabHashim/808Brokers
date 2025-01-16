@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>808BROKERS - Music Production</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <script src="music-site.js" defer></script>
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background-color: rgb(3, 7, 18);
+            color: white;
+        }
+
+        /* Utility classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: rgba(17, 24, 39, 0.5);
+            border-bottom: 1px solid rgba(31, 41, 55, 0.5);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgb(96, 165, 250);
+        }
+
+        .connect-wallet {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: rgb(147, 197, 253);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 300;
+        }
+
+        /* Hero section */
+        .hero {
+            position: relative;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.75rem;
+            font-weight: 200;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            color: rgb(156, 163, 175);
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba(31, 41, 55, 0.5);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            border-radius: 0.5rem;
+            color: white;
+        }
+
+        /* Features section */
+        .features {
+            padding: 5rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .feature-card {
+            background-color: rgba(17, 24, 39, 0.5);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(31, 41, 55, 0.5);
+        }
+
+        /* Screenshots section */
+        .screenshots {
+            background-color: rgba(17, 24, 39, 0.5);
+            padding: 5rem 0;
+        }
+
+        .screenshot-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .screenshot-item {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* CTA section */
+        .cta {
+            background-color: rgba(23, 37, 84, 0.2);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgba(17, 24, 39, 0.5);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(31, 41, 55, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav backdrop-blur">
+        <div class="container nav-content">
+            <div class="logo">
+                <i data-lucide="music"></i>
+                <span>808<strong>BROKERS</strong></span>
+            </div>
+            <button class="connect-wallet">
+                <i data-lucide="wallet"></i>
+                <span>Connect Wallet</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Discover Your <strong>Next Track</strong></h1>
+            <p class="hero-description">Search through millions of samples, beats, and music production tools</p>
+            
+            <div class="search-container">
+                <input type="text" 
+                       class="search-input" 
+                       placeholder="Search for samples, beats, or instruments...">
+                <button class="search-button">
+                    <i data-lucide="search"></i>
+                </button>
+            </div>
+
+            <div class="quick-links">
+                <span>Popular:</span>
+                <a href="#">Drum Kits</a>
+                <a href="#">Synth Presets</a>
+                <a href="#">Vocal Samples</a>
+                <a href="#">MIDI Patterns</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid" id="features-container">
+                <!-- Features will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots">
+        <div class="container">
+            <h2>How It <strong>Works</strong></h2>
+            <div id="screenshots-container">
+                <!-- Screenshots will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start <strong>Creating</strong>?</h2>
+            <p>Join thousands of musicians who are already creating professional tracks with our platform.</p>
+            <button class="cta-button">
+                <i data-lucide="download"></i>
+                <span>Start Free Trial</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i data-lucide="music"></i>
+                    <span>808<strong>BROKERS</strong></span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
