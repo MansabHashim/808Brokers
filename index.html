@@ -39,7 +39,7 @@
     </style>
 </head>
 <body class="min-h-screen bg-black w-full overflow-x-hidden">
-    <!-- Navigation -->
+    <!-- Navigation (same as main page) -->
     <nav class="bg-black/50 backdrop-blur-lg border-b border-gray-900 sticky top-0 z-50 w-full">
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
@@ -51,7 +51,7 @@
                     </svg>
                     <span class="text-lg text-white font-light tracking-wider">808<span class="font-medium">BROKERS</span></span>
                 </div>
-                <button class="bg-purple-900/20 hover:bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg flex items-center space-x-2 text-sm font-light">
+                <button onclick="openModal()" class="bg-purple-900/20 hover:bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg flex items-center space-x-2 text-sm font-light">
                     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M20 12V8H6a2 2 0 01-2-2c0-1.1.9-2 2-2h12v4"></path>
                         <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path>
@@ -61,6 +61,76 @@
             </div>
         </div>
     </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="bg-gray-900/90 backdrop-blur-lg p-8 rounded-xl max-w-md w-full mx-4 border border-gray-800">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl text-white font-light">Connect <span class="font-medium">Wallet</span></h2>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Wallet Options -->
+            <div class="space-y-4">
+                <button onclick="connectWallet('coinbase')" class="w-full bg-purple-900/20 hover:bg-purple-900/30 text-purple-300 p-4 rounded-lg flex items-center justify-between group transition-all">
+                    <div class="flex items-center space-x-3">
+                        <div class="h-8 w-8 bg-purple-900/30 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <span class="font-light">Coinbase</span>
+                    </div>
+                    <svg class="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <button onclick="connectWallet('robinhood')" class="w-full bg-purple-900/20 hover:bg-purple-900/30 text-purple-300 p-4 rounded-lg flex items-center justify-between group transition-all">
+                    <div class="flex items-center space-x-3">
+                        <div class="h-8 w-8 bg-purple-900/30 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21"></path>
+                            </svg>
+                        </div>
+                        <span class="font-light">Robinhood</span>
+                    </div>
+                    <svg class="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-400 font-light">New to Ethereum wallets? <a href="#" class="text-purple-400 hover:text-purple-300">Learn more</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('loginModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('loginModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 
     <!-- Hero Section -->
     <section class="relative w-full min-h-screen">
