@@ -7,19 +7,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script>
         let prevScrollPos = window.pageYOffset;
-        
-        window.onscroll = function() {
+
+        window.onscroll = function () {
             const currentScrollPos = window.pageYOffset;
             const header = document.getElementById("header");
-            
+
             if (prevScrollPos > currentScrollPos) {
                 header.style.transform = "translateY(0)";
             } else {
                 header.style.transform = "translateY(-100%)";
             }
-            
+
             prevScrollPos = currentScrollPos;
-        }
+        };
     </script>
     <style>
         body {
@@ -28,27 +28,34 @@
             overflow-x: hidden;
             width: 100%;
         }
+
         .backdrop-blur-sm {
             backdrop-filter: blur(8px);
         }
+
         .backdrop-blur-lg {
             backdrop-filter: blur(16px);
         }
+
         .theme-gradient {
-            background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.8) 50%, rgba(10,10,10,0.9) 100%);
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 0.9) 100%);
         }
+
         /* Hide scrollbar for Chrome, Safari and Opera */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         /* Hide scrollbar for IE, Edge and Firefox */
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
         #header {
             transition: transform 0.3s ease-in-out;
         }
+
         @media (max-width: 640px) {
             .container {
                 padding-left: 1rem;
@@ -80,6 +87,38 @@
             </div>
         </div>
     </nav>
+
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop" class="modal-backdrop"></div>
+
+    <!-- Modal -->
+    <div id="connectModal" class="modal">
+        <button class="close-button" id="closeModal">×</button>
+
+        <div class="text-center space-y-3 mb-8">
+            <h2 class="text-3xl font-light text-white tracking-tight">Connect Your Account</h2>
+            <p class="text-gray-400 text-lg">Choose your preferred trading platform</p>
+        </div>
+
+        <!-- OAuth Buttons -->
+        <div class="space-y-6 py-6">
+            <!-- Robinhood Button -->
+            <button class="w-full h-16 robinhood-button px-8 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm group">
+                <img src="Robinhoodllogo2.png" alt="Robinhood" class="h-6 w-auto opacity-90 group-hover:opacity-100 object-contain" />
+            </button>
+
+            <!-- Coinbase Button -->
+            <button class="w-full h-16 coinbase-button px-8 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm group">
+                <img src="coinbaselogo.png" alt="Coinbase" class="h-6 w-auto opacity-90 group-hover:opacity-100 object-contain" />
+            </button>
+
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-800/50"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative w-full min-h-screen">
