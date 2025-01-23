@@ -160,36 +160,123 @@
             </div>
         </div>
     </nav>
-      <!-- Modal Backdrop -->
-    <div id="modalBackdrop" class="modal-backdrop"></div>
+<!-- Modal Backdrop -->
+<div id="modalBackdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"></div>
 
-    <!-- Modal -->
-    <div id="connectModal" class="modal">
-        <button class="close-button" id="closeModal">×</button>
+<!-- Modal -->
+<div id="connectModal" class="fixed inset-0 flex items-center justify-center p-4 z-50">
+    <div class="bg-gray-900 rounded-xl border border-gray-800 w-full max-w-md p-6 space-y-6">
+        <!-- Close Button -->
+        <button id="closeModal" class="text-gray-400 hover:text-white absolute top-4 right-4">
+            &times;
+        </button>
         
-        <div class="text-center space-y-3 mb-8">
-            <h2 class="text-3xl font-light text-white tracking-tight">Connect Your Account</h2>
-            <p class="text-gray-400 text-lg">Choose your preferred trading platform</p>
-        </div>
-
-        <!-- OAuth Buttons -->
-        <div class="space-y-6 py-6">
-            <!-- Robinhood Button -->
-            <button class="w-full h-16 robinhood-button px-8 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm group">
-                <img src="Robinhoodllogo2.png" alt="Robinhood" class="h-6 w-auto opacity-90 group-hover:opacity-100 object-contain" />
-            </button>
-    
-        <!-- Coinbase Button -->
-            <button class="w-full h-16 coinbase-button px-8 rounded-xl transition-all flex items-center justify-center backdrop-blur-sm group">
-                <img src="coinbaselogo.png" alt="Coinbase" class="h-6 w-auto opacity-90 group-hover:opacity-100 object-contain" />
-            </button>
-    
-            <div class="relative">
-                <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-gray-800/50"></div>
-                </div>
+        <!-- Step 1: Platform Selection -->
+        <div id="platformSelection" class="space-y-8">
+            <div class="text-center space-y-3 mb-8">
+                <h2 class="text-3xl font-light text-white tracking-tight">Connect Your Account</h2>
+                <p class="text-gray-400 text-lg">Choose your preferred trading platform</p>
+            </div>
+            
+            <!-- OAuth Buttons -->
+            <div class="space-y-6">
+                <button
+                    id="robinhoodButton"
+                    class="w-full h-16 bg-green-500 hover:bg-green-600 px-8 rounded-xl transition-all flex items-center justify-center group"
+                >
+                    <img src="Robinhoodllogo2.png" alt="Robinhood" class="h-6 w-auto opacity-90 group-hover:opacity-100 object-contain" />
+                </button>
+                <button
+                    id="coinbaseButton"
+                    class="w-full h-16 bg-blue-600 hover:bg-blue-700 px-8 rounded-xl transition-all flex items-center justify-center group"
+                >
+                    <img src="coinbaselogo.png" alt="Coinbase" class="h-6 w-auto opacity-90 group-hover:opacity-100 object-contain" />
+                </button>
             </div>
         </div>
+
+        <!-- Step 2: Wallet Verification -->
+        <div id="walletVerification" class="hidden space-y-6">
+            <div class="text-center space-y-3">
+                <h2 class="text-3xl font-light text-white tracking-tight">Verify Your Wallet</h2>
+                <p class="text-gray-400 text-lg">Enter your Solana wallet address to log in</p>
+            </div>
+
+            <form id="walletForm" class="space-y-4">
+                <label for="solanaWalletAddress" class="block text-sm font-medium text-gray-200">
+                    Wallet Address
+                </label>
+                <input
+                    id="solanaWalletAddress"
+                    type="text"
+                    placeholder="Enter your Solana wallet address"
+                    class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring focus:ring-purple-500"
+                />
+                <button
+                    type="submit"
+                    class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all"
+                >
+                    Verify Wallet
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle modal behavior
+    const closeModal = document.getElementById("closeModal");
+    const connectModal = document.getElementById("connectModal");
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const platformSelection = document.getElementById("platformSelection");
+    const walletVerification = document.getElementById("walletVerification");
+    const robinhoodButton = document.getElementById("robinhoodButton");
+    const coinbaseButton = document.getElementById("coinbaseButton");
+    const walletForm = document.getElementById("walletForm");
+    const solanaWalletAddress = document.getElementById("solanaWalletAddress");
+
+    // Close modal
+    const closeConnectModal = () => {
+        connectModal.style.display = "none";
+        modalBackdrop.style.display = "none";
+        platformSelection.classList.remove("hidden");
+        walletVerification.classList.add("hidden");
+    };
+
+    closeModal.addEventListener("click", closeConnectModal);
+    modalBackdrop.addEventListener("click", closeConnectModal);
+
+    // Move to wallet verification step
+    const openWalletVerification = () => {
+        platformSelection.classList.add("hidden");
+        walletVerification.classList.remove("hidden");
+    };
+
+    robinhoodButton.addEventListener("click", openWalletVerification);
+    coinbaseButton.addEventListener("click", openWalletVerification);
+
+    // Handle wallet verification
+    walletForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const walletAddress = solanaWalletAddress.value.trim();
+
+        if (!walletAddress) {
+            alert("Please enter your Solana wallet address.");
+            return;
+        }
+
+        // Validate Solana wallet address
+        const isValidAddress = /^([1-9A-HJ-NP-Za-km-z]{32,44})$/.test(walletAddress);
+        if (!isValidAddress) {
+            alert("Invalid Solana wallet address. Please try again.");
+            return;
+        }
+
+        alert("Wallet address verified!");
+        closeConnectModal();
+    });
+</script>
+
 
         <!-- Terms and Privacy -->
         <div class="text-center">
