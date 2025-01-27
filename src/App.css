@@ -1,0 +1,20 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a0a0a;
+  color: white;
+}
+
+main {
+  flex: 1;
+}
+
+/* Override any light theme variables */
+:root {
+  --primary-color: #8b5cf6;
+  --secondary-color: #6366f1;
+  --background-color: #0a0a0a;
+  --text-color: #ffffff;
+  --white: #ffffff;
+}
