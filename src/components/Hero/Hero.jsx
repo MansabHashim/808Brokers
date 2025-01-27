@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <img 
           src="/images/downtown.gif" 
-          alt="Background Animation" 
+          alt="Downtown Background" 
           className="w-full h-full object-cover object-center opacity-50" 
         />
       </div>
