@@ -17,7 +17,7 @@ const Hero = () => {
           <img 
             src={`${import.meta.env.BASE_URL}downtown.gif`}
             alt="Downtown Background" 
-            className="absolute inset-0 w-full h-full object-cover opacity-75"
+            className="absolute inset-0 w-full h-screen object-cover opacity-75"
           />
         </div>
       </div>
