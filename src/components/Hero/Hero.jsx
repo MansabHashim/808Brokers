@@ -15,16 +15,9 @@ const Hero = () => {
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <div className="relative w-full h-full bg-black">
           <img 
-            src={`${import.meta.env.BASE_URL}Public/downtown.gif`}
+            src={`${import.meta.env.BASE_URL}downtown.gif`}
             alt="Downtown Background" 
             className="absolute inset-0 w-full h-full object-cover opacity-75"
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: 0
-            }}
           />
         </div>
       </div>
