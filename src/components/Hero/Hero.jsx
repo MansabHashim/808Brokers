@@ -17,14 +17,19 @@ const Hero = () => {
           <img 
             src="/downtown.gif"
             alt="Downtown Background" 
-            className="w-full h-full object-cover object-center opacity-50 mix-blend-overlay"
-            loading="eager"
-            style={{ maxWidth: '100%', height: '100%' }}
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-50"
+            style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0
+            }}
           />
         </div>
       </div>
       
-      <div className="relative container mx-auto px-4 py-12 md:py-24 min-h-[100dvh] flex items-center">
+      <div className="relative container mx-auto px-4 py-12 md:py-24 min-h-[100dvh] flex items-center z-10">
         <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-8 w-full">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
