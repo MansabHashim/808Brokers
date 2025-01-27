@@ -15,10 +15,14 @@ const Hero = () => {
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <div className="relative w-full h-full bg-black">
           <img 
-            src={`${import.meta.env.BASE_URL}downtown.gif`}
+            src="/downtown.gif"
             alt="Downtown Background" 
-            className="absolute inset-0 w-full h-screen object-cover opacity-75"
+            className="absolute inset-0 w-full h-full object-cover opacity-75"
+            style={{ objectPosition: 'center center' }}
+            loading="eager"
+            priority="true"
           />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
       </div>
       
