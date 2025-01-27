@@ -1,0 +1,53 @@
+.home {
+  background-color: #0a0a0a;
+  color: white;
+  min-height: 100vh;
+}
+
+.hero-section {
+  min-height: 100vh;
+  padding-top: 64px; /* Account for fixed navbar */
+}
+
+.services-section,
+.about-section,
+.contact-section {
+  padding: 80px 0;
+}
+
+/* Dark theme overrides */
+.services {
+  background-color: #111111;
+  color: white;
+}
+
+.services-grid .service-card {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.about {
+  background-color: #0a0a0a;
+  color: white;
+}
+
+.contact {
+  background-color: #111111;
+  color: white;
+}
+
+.contact-form {
+  background-color: #1a1a1a;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #2a2a2a;
+  color: white;
+  border-color: #333;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #666;
+} 
