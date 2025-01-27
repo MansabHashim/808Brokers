@@ -12,18 +12,20 @@ const Hero = () => {
 
   return (
     <section className="relative w-full min-h-[100dvh]">
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="fixed inset-0 w-full h-full overflow-hidden">
         <div className="relative w-full h-full bg-black">
           <img 
-            src={`${import.meta.env.BASE_URL}downtown.gif`}
+            src="./downtown.gif"
             alt="Downtown Background" 
-            className="absolute inset-0 w-full h-full object-cover opacity-75"
+            className="fixed inset-0 w-full h-full object-cover opacity-75"
             style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
               objectFit: 'cover',
-              zIndex: 0
+              zIndex: -1
             }}
           />
         </div>
@@ -46,7 +48,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-base md:text-xl lg:text-2xl text-gray-300 font-light tracking-wide max-w-2xl mx-auto px-4 mb-8"
           >
-            Search through millions of samples, beats, and music production tools with our AI-powered platform
+            Search through millions of samples, beats, and music production tools with our blockchain-powered platform
           </motion.p>
 
           <motion.div
