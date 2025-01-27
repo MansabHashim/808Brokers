@@ -13,6 +13,7 @@ const Studio = () => {
   const fileInputRef = useRef(null);
   const [isSaving, setIsSaving] = useState(false);
   const [savedStatus, setSavedStatus] = useState('');
+  const [songTitle, setSongTitle] = useState('');
   
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files);
@@ -27,29 +28,31 @@ const Studio = () => {
     setAudioFiles([...audioFiles, ...newAudioFiles]);
   };
 
-  const handleSaveLyrics = async () => {
+  const handleSave = async () => {
     if (!lyrics.trim()) return;
     
     setIsSaving(true);
     setSavedStatus('saving');
     
     try {
-<<<<<<< HEAD
       const response = await fetch('/api/lyrics/save', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ lyrics })
+        body: JSON.stringify({
+          lyrics: lyrics,
+          title: songTitle
+        })
       });
-      // Handle response
-=======
-      // Here you would implement your actual save logic
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated save
->>>>>>> 5d81684f2eaf323b206c8ddef426db40e420e845
-      setSavedStatus('saved');
-      setTimeout(() => setSavedStatus(''), 2000);
+
+      if (response.ok) {
+        setSavedStatus('saved');
+      } else {
+        setSavedStatus('error');
+      }
     } catch (error) {
+      console.error('Error saving lyrics:', error);
       setSavedStatus('error');
     } finally {
       setIsSaving(false);
@@ -70,21 +73,12 @@ const Studio = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div className="min-h-screen flex bg-black overflow-hidden">
       <DashboardNav />
       
       <div className="flex-1 flex flex-col w-full">
         {/* Header */}
         <header className="h-14 md:h-16 bg-gray-900/50 backdrop-blur-sm border-b border-gray-800 flex items-center justify-between px-3 md:px-6">
-=======
-    <div className="min-h-screen flex bg-black">
-      <DashboardNav />
-      
-      <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <header className="h-16 bg-gray-900/50 backdrop-blur-sm border-b border-gray-800 flex items-center justify-between px-4 md:px-6">
->>>>>>> 5d81684f2eaf323b206c8ddef426db40e420e845
           <div className="flex items-center space-x-4">
             <h1 className="text-xl font-light text-white">Studio</h1>
             {/* Mobile Tab Switcher */}
@@ -224,7 +218,7 @@ const Studio = () => {
                     )}
                   </button>
                   <button
-                    onClick={handleSaveLyrics}
+                    onClick={handleSave}
                     disabled={isSaving || !lyrics.trim()}
                     className={`px-3 py-1.5 md:px-4 md:py-2 rounded-lg flex items-center space-x-2 text-sm md:text-base ${
                       (isSaving || !lyrics.trim()) ? 'bg-gray-700 text-gray-400 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-700 text-white'
@@ -253,15 +247,11 @@ const Studio = () => {
               <textarea
                 value={lyrics}
                 onChange={(e) => setLyrics(e.target.value)}
-<<<<<<< HEAD
                 className="flex-1 bg-gray-800/50 text-white p-3 md:p-4 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono text-base leading-relaxed"
                 style={{ 
                   minHeight: '200px',
                   WebkitOverflowScrolling: 'touch'
                 }}
-=======
-                className="flex-1 bg-gray-800/50 text-white p-3 md:p-4 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono text-sm md:text-base"
->>>>>>> 5d81684f2eaf323b206c8ddef426db40e420e845
                 placeholder="Write or generate lyrics here..."
               />
             </div>
