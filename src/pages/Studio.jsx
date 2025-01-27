@@ -34,6 +34,7 @@ const Studio = () => {
     setSavedStatus('saving');
     
     try {
+<<<<<<< HEAD
       const response = await fetch('/api/lyrics/save', {
         method: 'POST',
         headers: {
@@ -42,6 +43,10 @@ const Studio = () => {
         body: JSON.stringify({ lyrics })
       });
       // Handle response
+=======
+      // Here you would implement your actual save logic
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated save
+>>>>>>> 5d81684f2eaf323b206c8ddef426db40e420e845
       setSavedStatus('saved');
       setTimeout(() => setSavedStatus(''), 2000);
     } catch (error) {
@@ -65,12 +70,21 @@ const Studio = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen flex bg-black overflow-hidden">
       <DashboardNav />
       
       <div className="flex-1 flex flex-col w-full">
         {/* Header */}
         <header className="h-14 md:h-16 bg-gray-900/50 backdrop-blur-sm border-b border-gray-800 flex items-center justify-between px-3 md:px-6">
+=======
+    <div className="min-h-screen flex bg-black">
+      <DashboardNav />
+      
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <header className="h-16 bg-gray-900/50 backdrop-blur-sm border-b border-gray-800 flex items-center justify-between px-4 md:px-6">
+>>>>>>> 5d81684f2eaf323b206c8ddef426db40e420e845
           <div className="flex items-center space-x-4">
             <h1 className="text-xl font-light text-white">Studio</h1>
             {/* Mobile Tab Switcher */}
@@ -239,11 +253,15 @@ const Studio = () => {
               <textarea
                 value={lyrics}
                 onChange={(e) => setLyrics(e.target.value)}
+<<<<<<< HEAD
                 className="flex-1 bg-gray-800/50 text-white p-3 md:p-4 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono text-base leading-relaxed"
                 style={{ 
                   minHeight: '200px',
                   WebkitOverflowScrolling: 'touch'
                 }}
+=======
+                className="flex-1 bg-gray-800/50 text-white p-3 md:p-4 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono text-sm md:text-base"
+>>>>>>> 5d81684f2eaf323b206c8ddef426db40e420e845
                 placeholder="Write or generate lyrics here..."
               />
             </div>
