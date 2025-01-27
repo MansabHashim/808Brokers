@@ -12,20 +12,18 @@ const Hero = () => {
 
   return (
     <section className="relative w-full min-h-[100dvh]">
-      <div className="fixed inset-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <div className="relative w-full h-full bg-black">
           <img 
-            src="./downtown.gif"
+            src="/downtown.gif"
             alt="Downtown Background" 
-            className="fixed inset-0 w-full h-full object-cover opacity-75"
+            className="absolute inset-0 w-full h-full object-cover opacity-75"
             style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
               objectFit: 'cover',
-              zIndex: -1
+              zIndex: 0
             }}
           />
         </div>
@@ -80,16 +78,16 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex justify-center space-x-8 mt-8"
           >
-            <a href="#beats" className="text-gray-400 hover:text-white transition-colors group">
+            <div className="text-gray-400 hover:text-white transition-colors group cursor-pointer">
               <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500/20">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
               </div>
               <span className="text-sm">Beats</span>
-            </a>
+            </div>
 
-            <a href="#samples" className="text-gray-400 hover:text-white transition-colors group">
+            <div className="text-gray-400 hover:text-white transition-colors group cursor-pointer">
               <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500/20">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -97,16 +95,16 @@ const Hero = () => {
                 </svg>
               </div>
               <span className="text-sm">Samples</span>
-            </a>
+            </div>
 
-            <a href="#producers" className="text-gray-400 hover:text-white transition-colors group">
+            <div className="text-gray-400 hover:text-white transition-colors group cursor-pointer">
               <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500/20">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
               <span className="text-sm">Producers</span>
-            </a>
+            </div>
           </motion.div>
         </div>
       </div>
