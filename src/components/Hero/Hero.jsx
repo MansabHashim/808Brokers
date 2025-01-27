@@ -26,13 +26,13 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="relative container mx-auto px-4 py-12 md:py-24 min-h-[100dvh] flex items-center z-10">
-        <div className="max-w-3xl mx-auto text-center space-y-4 md:space-y-8 w-full">
+      <div className="relative container mx-auto px-4 min-h-[100dvh] flex items-start z-10" style={{ paddingTop: '25vh' }}>
+        <div className="max-w-3xl mx-auto text-center w-full">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6"
+            className="text-3xl md:text-5xl font-bold text-white mb-8"
           >
             Welcome to <span className="text-purple-500">808Brokers</span>
           </motion.h1>
@@ -41,7 +41,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base md:text-xl lg:text-2xl text-gray-300 font-light tracking-wide max-w-2xl mx-auto px-4 mb-8"
+            className="text-base md:text-xl lg:text-2xl text-gray-300 font-light tracking-wide max-w-2xl mx-auto px-4 mb-12"
           >
             Search through millions of samples, beats, and music production tools with our blockchain-powered platform
           </motion.p>
@@ -50,22 +50,24 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-2xl mx-auto w-full"
+            className="max-w-2xl mx-auto px-4"
           >
-            <form onSubmit={handleSearch} className="relative">
-              <input
-                type="text"
-                placeholder="Search for beats, samples, or producers..."
-                className="w-full px-6 py-4 bg-white/10 backdrop-blur-md rounded-lg text-white placeholder-gray-400 border border-white/20 focus:outline-none focus:border-purple-500 transition-colors"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors"
-              >
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
+            <form onSubmit={handleSearch}>
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search for beats, samples, or producers..."
+                  className="w-full px-8 py-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors p-2"
+                >
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </button>
+              </div>
             </form>
           </motion.div>
 
@@ -73,34 +75,27 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex justify-center space-x-8 mt-8"
+            className="flex flex-col items-center mt-12"
           >
-            <div className="text-gray-400 hover:text-white transition-colors group cursor-pointer">
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500/20">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            <div className="flex flex-wrap justify-center gap-3 text-sm">
+              <span className="flex items-center bg-white/5 hover:bg-white/10 px-5 py-2.5 rounded-full border border-white/10 transition-colors cursor-pointer">
+                <svg className="w-4 h-4 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-              </div>
-              <span className="text-sm">Beats</span>
-            </div>
-
-            <div className="text-gray-400 hover:text-white transition-colors group cursor-pointer">
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500/20">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <span className="text-gray-300">Polygon Network</span>
+              </span>
+              <span className="flex items-center bg-white/5 hover:bg-white/10 px-5 py-2.5 rounded-full border border-white/10 transition-colors cursor-pointer">
+                <svg className="w-4 h-4 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                 </svg>
-              </div>
-              <span className="text-sm">Samples</span>
-            </div>
-
-            <div className="text-gray-400 hover:text-white transition-colors group cursor-pointer">
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-purple-500/20">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                <span className="text-gray-300">Cloud Storage</span>
+              </span>
+              <span className="flex items-center bg-white/5 hover:bg-white/10 px-5 py-2.5 rounded-full border border-white/10 transition-colors cursor-pointer">
+                <svg className="w-4 h-4 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
-              </div>
-              <span className="text-sm">Producers</span>
+                <span className="text-gray-300">Premium Samples</span>
+              </span>
             </div>
           </motion.div>
         </div>
