@@ -16,7 +16,8 @@ const Hero = () => {
         <img 
           src="/images/downtown.gif" 
           alt="Downtown Background" 
-          className="w-full h-full object-cover object-center opacity-50" 
+          className="w-full h-full object-cover object-center opacity-50"
+          loading="eager"
         />
       </div>
       
